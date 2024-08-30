@@ -11,7 +11,7 @@ import ComposableArchitecture
 @main
 struct GettingStartedWithTCAApp: App {
     static let store = Store(initialState: CounterFeature.State()) {
-        CounterFeature() // Can be left empty but actions won't triggrr
+        CounterFeature() // Can be left empty but actions won't trigger
         ._printChanges() // Prints changes on state (if we have multiple changes it will only print the changed state variables) 
     }
     

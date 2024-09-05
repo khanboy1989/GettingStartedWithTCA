@@ -16,6 +16,7 @@ struct CounterFeature {
         var count = 0
         var isLoading = false
         var fact: String?
+        var isTimerRunning = false
     }
     
     enum Action {
@@ -24,8 +25,11 @@ struct CounterFeature {
         case resetButtonTapped
         case factButtonTapped
         case factResponse(String)
-        
+        case timerTick
+        case toggleTimerButtonTapped
     }
+    
+    enum CancelID { case timer }
     
     var body: some ReducerOf<Self> {
         Reduce { state , action in
@@ -60,6 +64,25 @@ struct CounterFeature {
                 state.fact = fact
                 state.isLoading = false
                 return .none
+                
+            case .timerTick:
+                state.count += 1
+                state.fact = nil
+                return .none
+                
+            case .toggleTimerButtonTapped:
+                state.isTimerRunning.toggle()
+                if state.isTimerRunning {
+                    return .run { send in
+                        while true {
+                            try await Task.sleep(for: .seconds(1))
+                            await send(.timerTick)
+                        }
+                    }.cancellable(id: CancelID.timer)
+                } else {
+                    return .cancel(id: CancelID.timer)
+                }
+               
             }
         }
     }
@@ -108,7 +131,6 @@ struct CounterView: View {
                     .cornerRadius(10)
                     
                     Button("+") {
-                        
                         viewStore.send(.incrementButtonTapped)
                     }
                     .font(.largeTitle)
@@ -117,17 +139,25 @@ struct CounterView: View {
                     .cornerRadius(10)
                 }
                 
-                Button("Fact") {
-                    store.send(.factButtonTapped)
+                Button(store.isTimerRunning ? "Stop timer" : "Start timer") {
+                    viewStore.send(.toggleTimerButtonTapped)
                 }
                 .font(.largeTitle)
                 .padding()
                 .background(Color.black.opacity(0.1))
                 .cornerRadius(10)
                 
-                if store.isLoading {
+                Button("Fact") {
+                    viewStore.send(.factButtonTapped)
+                }
+                .font(.largeTitle)
+                .padding()
+                .background(Color.black.opacity(0.1))
+                .cornerRadius(10)
+                
+                if viewStore.isLoading {
                     ProgressView()
-                } else if let fact = store.fact {
+                } else if let fact = viewStore.fact {
                     Text(fact)
                         .font(.largeTitle)
                         .multilineTextAlignment(.center)

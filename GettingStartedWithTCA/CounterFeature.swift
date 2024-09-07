@@ -29,6 +29,9 @@ struct CounterFeature {
         case toggleTimerButtonTapped
     }
     
+    @Dependency(\.continuousClock) var clock
+    @Dependency(\.numberFact) var numberFact
+    
     enum CancelID { case timer }
     
     var body: some ReducerOf<Self> {
@@ -55,10 +58,13 @@ struct CounterFeature {
                     //    concurrently-executing code
                     // 🛑 'async' call in a function that does not support concurrency
                     // 🛑 Errors thrown from here are not handled
-                    let (data, _) = try await URLSession.shared
-                        .data(from: URL(string: "http://numbersapi.com/\(count)")!)
-                    let fact = String(decoding: data, as: UTF8.self)
-                    await send(.factResponse(fact))
+//                    let (data, _) = try await URLSession.shared
+//                        .data(from: URL(string: "http://numbersapi.com/\(count)")!)
+//                    let fact = String(decoding: data, as: UTF8.self)
+//                    await send(.factResponse(fact))
+                    
+                    try await send(.factResponse(self.numberFact.fetch(count)))
+
                 }
             case let .factResponse(fact):
                 state.fact = fact
@@ -74,15 +80,18 @@ struct CounterFeature {
                 state.isTimerRunning.toggle()
                 if state.isTimerRunning {
                     return .run { send in
-                        while true {
-                            try await Task.sleep(for: .seconds(1))
+                        //                        while true {
+                        //                            try await Task.sleep(for: .seconds(1))
+                        //                            await send(.timerTick)
+                        //                        }
+                        for await _ in self.clock.timer(interval: .seconds(1)) {
                             await send(.timerTick)
                         }
                     }.cancellable(id: CancelID.timer)
                 } else {
                     return .cancel(id: CancelID.timer)
                 }
-               
+                
             }
         }
     }
@@ -170,6 +179,6 @@ struct CounterView: View {
 
 #Preview {
     CounterView(store: Store(initialState: CounterFeature.State()) {
-        CounterFeature() // Can be left empty but actions won't triggrr
+        CounterFeature() // Can be left empty but actions won't trigger
     })
 }

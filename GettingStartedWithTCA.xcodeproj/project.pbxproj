@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		542367352C8A24F200B017D1 /* CounterFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542367342C8A24F200B017D1 /* CounterFeatureTests.swift */; };
+		542367372C8CC69800B017D1 /* NumberFactClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542367362C8CC69800B017D1 /* NumberFactClient.swift */; };
 		54B44FB52C7F53FB006B7E52 /* GettingStartedWithTCAApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B44FB42C7F53FB006B7E52 /* GettingStartedWithTCAApp.swift */; };
 		54B44FB72C7F53FB006B7E52 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B44FB62C7F53FB006B7E52 /* ContentView.swift */; };
 		54B44FB92C7F53FC006B7E52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54B44FB82C7F53FC006B7E52 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		542367342C8A24F200B017D1 /* CounterFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterFeatureTests.swift; sourceTree = "<group>"; };
+		542367362C8CC69800B017D1 /* NumberFactClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFactClient.swift; sourceTree = "<group>"; };
 		54B44FB12C7F53FB006B7E52 /* GettingStartedWithTCA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GettingStartedWithTCA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54B44FB42C7F53FB006B7E52 /* GettingStartedWithTCAApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GettingStartedWithTCAApp.swift; sourceTree = "<group>"; };
 		54B44FB62C7F53FB006B7E52 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				54B44FB82C7F53FC006B7E52 /* Assets.xcassets */,
 				54B44FBA2C7F53FC006B7E52 /* Preview Content */,
 				54B44FE12C7FD61A006B7E52 /* CounterFeature.swift */,
+				542367362C8CC69800B017D1 /* NumberFactClient.swift */,
 			);
 			path = GettingStartedWithTCA;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				54B44FE22C7FD61A006B7E52 /* CounterFeature.swift in Sources */,
 				54B44FB72C7F53FB006B7E52 /* ContentView.swift in Sources */,
 				54B44FB52C7F53FB006B7E52 /* GettingStartedWithTCAApp.swift in Sources */,
+				542367372C8CC69800B017D1 /* NumberFactClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

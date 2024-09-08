@@ -23,6 +23,8 @@
 		54B44FE22C7FD61A006B7E52 /* CounterFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B44FE12C7FD61A006B7E52 /* CounterFeature.swift */; };
 		54FCFBFB2C8E332400B881BB /* ContactsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FCFBFA2C8E332400B881BB /* ContactsFeature.swift */; };
 		54FCFBFD2C8E342D00B881BB /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FCFBFC2C8E342D00B881BB /* ContactsView.swift */; };
+		54FCFBFF2C8E356A00B881BB /* AddContactFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FCFBFE2C8E356A00B881BB /* AddContactFeature.swift */; };
+		54FCFC012C8E361900B881BB /* AddContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FCFC002C8E361900B881BB /* AddContactView.swift */; };
 		EB17B3CD2C81FB0900FDB5AC /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = EB17B3CC2C81FB0900FDB5AC /* ComposableArchitecture */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +66,8 @@
 		54B44FE32C88F214006B7E52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		54FCFBFA2C8E332400B881BB /* ContactsFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsFeature.swift; sourceTree = "<group>"; };
 		54FCFBFC2C8E342D00B881BB /* ContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
+		54FCFBFE2C8E356A00B881BB /* AddContactFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactFeature.swift; sourceTree = "<group>"; };
+		54FCFC002C8E361900B881BB /* AddContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +118,7 @@
 				542367392C8CE44B00B017D1 /* AppFeature.swift */,
 				54B44FE12C7FD61A006B7E52 /* CounterFeature.swift */,
 				54FCFBFA2C8E332400B881BB /* ContactsFeature.swift */,
+				54FCFBFE2C8E356A00B881BB /* AddContactFeature.swift */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -151,6 +156,7 @@
 				54B44FBA2C7F53FC006B7E52 /* Preview Content */,
 				5423673B2C8DF4E900B017D1 /* CounterView.swift */,
 				54FCFBFC2C8E342D00B881BB /* ContactsView.swift */,
+				54FCFC002C8E361900B881BB /* AddContactView.swift */,
 			);
 			path = GettingStartedWithTCA;
 			sourceTree = "<group>";
@@ -319,8 +325,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				54B44FE22C7FD61A006B7E52 /* CounterFeature.swift in Sources */,
+				54FCFBFF2C8E356A00B881BB /* AddContactFeature.swift in Sources */,
 				5423673A2C8CE44B00B017D1 /* AppFeature.swift in Sources */,
 				542367432C8E329400B017D1 /* Contact.swift in Sources */,
+				54FCFC012C8E361900B881BB /* AddContactView.swift in Sources */,
 				54FCFBFB2C8E332400B881BB /* ContactsFeature.swift in Sources */,
 				54B44FB72C7F53FB006B7E52 /* ContentView.swift in Sources */,
 				54B44FB52C7F53FB006B7E52 /* GettingStartedWithTCAApp.swift in Sources */,

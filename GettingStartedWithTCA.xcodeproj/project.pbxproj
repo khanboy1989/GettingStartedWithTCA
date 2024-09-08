@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		542367352C8A24F200B017D1 /* CounterFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542367342C8A24F200B017D1 /* CounterFeatureTests.swift */; };
 		542367372C8CC69800B017D1 /* NumberFactClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542367362C8CC69800B017D1 /* NumberFactClient.swift */; };
+		5423673A2C8CE44B00B017D1 /* AppFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542367392C8CE44B00B017D1 /* AppFeature.swift */; };
+		5423673C2C8DF4E900B017D1 /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5423673B2C8DF4E900B017D1 /* CounterView.swift */; };
+		5423673E2C8E2C1D00B017D1 /* AppFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5423673D2C8E2C1D00B017D1 /* AppFeatureTests.swift */; };
 		54B44FB52C7F53FB006B7E52 /* GettingStartedWithTCAApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B44FB42C7F53FB006B7E52 /* GettingStartedWithTCAApp.swift */; };
 		54B44FB72C7F53FB006B7E52 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B44FB62C7F53FB006B7E52 /* ContentView.swift */; };
 		54B44FB92C7F53FC006B7E52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54B44FB82C7F53FC006B7E52 /* Assets.xcassets */; };
@@ -40,6 +43,9 @@
 /* Begin PBXFileReference section */
 		542367342C8A24F200B017D1 /* CounterFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterFeatureTests.swift; sourceTree = "<group>"; };
 		542367362C8CC69800B017D1 /* NumberFactClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFactClient.swift; sourceTree = "<group>"; };
+		542367392C8CE44B00B017D1 /* AppFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFeature.swift; sourceTree = "<group>"; };
+		5423673B2C8DF4E900B017D1 /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
+		5423673D2C8E2C1D00B017D1 /* AppFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFeatureTests.swift; sourceTree = "<group>"; };
 		54B44FB12C7F53FB006B7E52 /* GettingStartedWithTCA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GettingStartedWithTCA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54B44FB42C7F53FB006B7E52 /* GettingStartedWithTCAApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GettingStartedWithTCAApp.swift; sourceTree = "<group>"; };
 		54B44FB62C7F53FB006B7E52 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -110,6 +116,8 @@
 				54B44FBA2C7F53FC006B7E52 /* Preview Content */,
 				54B44FE12C7FD61A006B7E52 /* CounterFeature.swift */,
 				542367362C8CC69800B017D1 /* NumberFactClient.swift */,
+				542367392C8CE44B00B017D1 /* AppFeature.swift */,
+				5423673B2C8DF4E900B017D1 /* CounterView.swift */,
 			);
 			path = GettingStartedWithTCA;
 			sourceTree = "<group>";
@@ -127,6 +135,7 @@
 			children = (
 				54B44FC52C7F53FC006B7E52 /* GettingStartedWithTCATests.swift */,
 				542367342C8A24F200B017D1 /* CounterFeatureTests.swift */,
+				5423673D2C8E2C1D00B017D1 /* AppFeatureTests.swift */,
 			);
 			path = GettingStartedWithTCATests;
 			sourceTree = "<group>";
@@ -277,9 +286,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				54B44FE22C7FD61A006B7E52 /* CounterFeature.swift in Sources */,
+				5423673A2C8CE44B00B017D1 /* AppFeature.swift in Sources */,
 				54B44FB72C7F53FB006B7E52 /* ContentView.swift in Sources */,
 				54B44FB52C7F53FB006B7E52 /* GettingStartedWithTCAApp.swift in Sources */,
 				542367372C8CC69800B017D1 /* NumberFactClient.swift in Sources */,
+				5423673C2C8DF4E900B017D1 /* CounterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +300,7 @@
 			files = (
 				54B44FC62C7F53FC006B7E52 /* GettingStartedWithTCATests.swift in Sources */,
 				542367352C8A24F200B017D1 /* CounterFeatureTests.swift in Sources */,
+				5423673E2C8E2C1D00B017D1 /* AppFeatureTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -24,17 +24,18 @@ struct CounterView: View {
     
     let store: StoreOf<CounterFeature>
     
+    /* Currently it is not necessary to use withViewStore because @ObservableState is the new way of listening State changes */
     var body: some View {
-        WithViewStore(self.store, observe: { $0 }) { viewStore in
+//        WithViewStore(self.store, observe: { $0 }) { viewStore in
             VStack {
-                Text("\(viewStore.count)")
+                Text("\(store.count)")
                     .font(.largeTitle)
                     .padding()
                     .background(Color.black.opacity(0.1))
                     .cornerRadius(10)
                 HStack {
                     Button("-") {
-                        viewStore.send(.decrementButtonTapped)
+                        store.send(.decrementButtonTapped)
                     }
                     .font(.largeTitle)
                     .padding()
@@ -42,7 +43,7 @@ struct CounterView: View {
                     .cornerRadius(10)
                     
                     Button("Reset") {
-                        viewStore.send(.resetButtonTapped)
+                        store.send(.resetButtonTapped)
                     }
                     .font(.largeTitle)
                     .padding()
@@ -50,7 +51,7 @@ struct CounterView: View {
                     .cornerRadius(10)
                     
                     Button("+") {
-                        viewStore.send(.incrementButtonTapped)
+                        store.send(.incrementButtonTapped)
                     }
                     .font(.largeTitle)
                     .padding()
@@ -59,7 +60,7 @@ struct CounterView: View {
                 }
                 
                 Button(store.isTimerRunning ? "Stop timer" : "Start timer") {
-                    viewStore.send(.toggleTimerButtonTapped)
+                    store.send(.toggleTimerButtonTapped)
                 }
                 .font(.largeTitle)
                 .padding()
@@ -67,23 +68,23 @@ struct CounterView: View {
                 .cornerRadius(10)
                 
                 Button("Fact") {
-                    viewStore.send(.factButtonTapped)
+                    store.send(.factButtonTapped)
                 }
                 .font(.largeTitle)
                 .padding()
                 .background(Color.black.opacity(0.1))
                 .cornerRadius(10)
                 
-                if viewStore.isLoading {
+                if store.isLoading {
                     ProgressView()
-                } else if let fact = viewStore.fact {
+                } else if let fact = store.fact {
                     Text(fact)
                         .font(.largeTitle)
                         .multilineTextAlignment(.center)
                         .padding()
                 }
             }
-        }
+//        }
     }
 }
 

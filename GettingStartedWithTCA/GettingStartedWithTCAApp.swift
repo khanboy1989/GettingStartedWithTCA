@@ -15,9 +15,14 @@ struct GettingStartedWithTCAApp: App {
         ._printChanges() // Prints changes on state (if we have multiple changes it will only print the changed state variables)
     }
     
+    static let contactsStore = Store(initialState: ContactsFeature.State()) {
+        ContactsFeature()
+    }
+    
     var body: some Scene {
         WindowGroup {
             AppView(store: GettingStartedWithTCAApp.store)
+//            ContactsView(store: GettingStartedWithTCAApp.contactsStore)
         }
     }
 }

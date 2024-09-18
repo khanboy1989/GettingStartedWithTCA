@@ -24,6 +24,7 @@ struct CounterView: View {
     
     let store: StoreOf<CounterFeature>
     
+    /* Currently it is not necessary to use withViewStore because @ObservableState is the new way of listening State changes */
     var body: some View {
 //        WithViewStore(self.store, observe: { $0 }) { viewStore in
             VStack {

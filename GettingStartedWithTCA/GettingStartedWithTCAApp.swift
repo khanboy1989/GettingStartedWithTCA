@@ -21,8 +21,8 @@ struct GettingStartedWithTCAApp: App {
     
     var body: some Scene {
         WindowGroup {
-            AppView(store: GettingStartedWithTCAApp.store)
-//            ContactsView(store: GettingStartedWithTCAApp.contactsStore)
+//            AppView(store: GettingStartedWithTCAApp.store)
+            ContactsView(store: GettingStartedWithTCAApp.contactsStore)
         }
     }
 }

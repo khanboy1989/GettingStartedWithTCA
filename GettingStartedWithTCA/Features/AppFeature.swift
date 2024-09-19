@@ -14,7 +14,7 @@ struct AppView: View {
     let store: StoreOf<AppFeature>
     
     var body: some View {
-        WithViewStore(self.store, observe: { $0 }) {viewStore in
+        WithViewStore(self.store, observe: { $0 }) { viewStore in
             TabView(selection: viewStore.binding(get: \.selectedTab, send: AppFeature.Action.selectedTab)) {
                 CounterView(store: store.scope(state: \.tab1, action: \.tab1))
                     .tabItem {
@@ -37,6 +37,9 @@ struct AppView: View {
     })
 }
 
+/*
+ To compose the CounterFeature into the AppFeature we can use the Scope reducer. It allows you to focus in on a sub-domain of the parent feature, and run a child reducer on that sub-domain. In this case we want to do that twice. First we single out the tab1 state and actions in order to run the CounterFeature reducer, and then we do it again for the tab2 state and actions.
+ */
 @Reducer
 struct AppFeature {
     
@@ -50,7 +53,7 @@ struct AppFeature {
     struct State: Equatable {
         var tab1 = CounterFeature.State()
         var tab2 = CounterFeature.State()
-        var selectedTab: AppFeature.Tab = .tab1
+        var selectedTab: AppFeature.Tab = .tab2
     }
     
     // Composing Action

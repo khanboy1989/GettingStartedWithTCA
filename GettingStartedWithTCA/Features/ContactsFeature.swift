@@ -19,6 +19,8 @@ struct ContactsFeature {
     enum Action {
         case addButtonTapped
         case addContact(PresentationAction<AddContactFeature.Action>)
+        case deleteButtonTapped(id: Contact.ID)
+
     }
     
     var body: some ReducerOf<Self> {
@@ -27,17 +29,22 @@ struct ContactsFeature {
             case .addButtonTapped:
                 state.addContact = AddContactFeature.State(contact: Contact(id: UUID(), name: ""))
                 return .none
-            case .addContact(.presented(.cancelButtonTapped)):
-                state.addContact = nil
-                return .none
-            case .addContact(.presented(.saveButtonTapped)):
-                guard let contact = state.addContact?.contact
-                else { return .none }
+                
+                /*
+                 Child view dismissed it self so we don't need to implement this case
+                 */
+//            case .addContact(.presented(.delegate(.cancel))):
+//                state.addContact = nil
+//                return .none
+            case let .addContact(.presented(.delegate(.saveContact(contact)))):
                 state.contacts.append(contact)
-                state.addContact = nil
+//                state.addContact = nil // dismiss is handled by child feature
                 return .none
             case .addContact:
                 return .none
+                
+            case let .deleteButtonTapped(id):
+                return .none 
             }
         }.ifLet(\.$addContact, action: \.addContact) {
             AddContactFeature()

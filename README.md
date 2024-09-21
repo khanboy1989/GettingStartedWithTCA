@@ -6,6 +6,8 @@ This project demonstrates the use of **The Composable Architecture (TCA)** in Sw
 
 The purpose of this project is to explore and understand **Point-Free's TCA**, a robust state management architecture designed for SwiftUI. The architecture allows you to manage state, side effects, and navigation in a clean and scalable way. The project features two examples that cover different use cases in SwiftUI development: state management and navigation.
 
+In terms of TCA, this project demonstrates example for Reducers, Actions, States, Navigation and Effects
+
 ## Examples
 
 ### 1. `CounterView`

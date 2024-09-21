@@ -36,12 +36,12 @@ Ensure you have the following installed:
 ### Installation
 
 Clone this repository to your local machine:
-    git clone https://github.com/khanboy1989/GettingStartedWithTCA.git
+- git clone https://github.com/khanboy1989/GettingStartedWithTCA.git
 
 
 ### Open The Project 
-  cd your-project
-  open GettingStartedWithTCA.xcodeproj
+  - cd your-project
+  - open GettingStartedWithTCA.xcodeproj
 
 
 

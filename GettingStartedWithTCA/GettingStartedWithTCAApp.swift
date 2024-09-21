@@ -10,14 +10,19 @@ import ComposableArchitecture
 
 @main
 struct GettingStartedWithTCAApp: App {
-    static let store = Store(initialState: CounterFeature.State()) {
-        CounterFeature() // Can be left empty but actions won't trigger
-        ._printChanges() // Prints changes on state (if we have multiple changes it will only print the changed state variables) 
+    static let store = Store(initialState: AppFeature.State()) {
+        AppFeature() // Can be left empty but actions won't trigger
+        ._printChanges() // Prints changes on state (if we have multiple changes it will only print the changed state variables)
+    }
+    
+    static let contactsStore = Store(initialState: ContactsFeature.State()) {
+        ContactsFeature()
     }
     
     var body: some Scene {
         WindowGroup {
-            CounterView(store: GettingStartedWithTCAApp.store)
+//            AppView(store: GettingStartedWithTCAApp.store)
+            ContactsView(store: GettingStartedWithTCAApp.contactsStore)
         }
     }
 }
